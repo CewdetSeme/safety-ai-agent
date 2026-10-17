@@ -8,10 +8,10 @@
     }
   },
   {
-    "message": "The fire is still present near the turbine",
+    "message": "Fire detected near the gas turbine",
     "decision": {
       "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine poses an ongoing and immediate danger to equipment and personnel.",
+      "reason": "The message reports a fire detected near the gas turbine, which is a recurring critical hazard that poses immediate danger to equipment and personnel.",
       "action": "NOTIFY"
     }
   },
@@ -19,15 +19,7 @@
     "message": "Fire detected near the gas turbine",
     "decision": {
       "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine represents an ongoing critical hazard to personnel and plant equipment.",
-      "action": "NOTIFY"
-    }
-  },
-  {
-    "message": "The fire is still present near the turbine",
-    "decision": {
-      "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine represents an ongoing and critical hazard to personnel and plant equipment.",
+      "reason": "A fire detected near the gas turbine is a recurring critical hazard that poses an immediate danger to equipment and personnel.",
       "action": "NOTIFY"
     }
   },
@@ -35,119 +27,7 @@
     "message": "Fire detected near the gas turbine",
     "decision": {
       "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine poses an ongoing and immediate critical danger to plant equipment and personnel safety.",
-      "action": "NOTIFY"
-    }
-  },
-  {
-    "message": "Fire detected near the gas turbine",
-    "decision": {
-      "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine poses an immediate and ongoing danger to equipment and personnel safety.",
-      "action": "NOTIFY"
-    }
-  },
-  {
-    "message": "The fire is still present near the turbine",
-    "decision": {
-      "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine continues to pose an immediate and critical danger to plant equipment and personnel safety.",
-      "action": "NOTIFY"
-    }
-  },
-  {
-    "message": "Fire detected near the gas turbine",
-    "decision": {
-      "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine continues to represent an immediate and critical hazard to plant equipment and personnel safety.",
-      "action": "NOTIFY"
-    }
-  },
-  {
-    "message": "The fire is still present near the turbine",
-    "decision": {
-      "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine continues to represent an immediate and critical hazard to plant equipment and personnel safety.",
-      "action": "NOTIFY"
-    }
-  },
-  {
-    "message": "Fire detected near the gas turbine",
-    "decision": {
-      "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine poses an ongoing, immediate, and critical danger to plant equipment and personnel safety.",
-      "action": "NOTIFY"
-    }
-  },
-  {
-    "message": "The fire is still present near the turbine",
-    "decision": {
-      "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine continues to represent an immediate and critical hazard to plant equipment and personnel safety.",
-      "action": "NOTIFY"
-    }
-  },
-  {
-    "message": "Fire detected near the gas turbine",
-    "decision": {
-      "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine poses an ongoing, immediate, and critical danger to plant equipment and personnel safety.",
-      "action": "NOTIFY"
-    }
-  },
-  {
-    "message": "The fire is still present near the turbine",
-    "decision": {
-      "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine continues to pose an immediate, ongoing, and critical danger to plant equipment and personnel safety.",
-      "action": "NOTIFY"
-    }
-  },
-  {
-    "message": "Fire detected near the gas turbine",
-    "decision": {
-      "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine poses an ongoing, immediate, and critical danger to plant equipment and personnel safety.",
-      "action": "NOTIFY"
-    }
-  },
-  {
-    "message": "The fire is still present near the turbine",
-    "decision": {
-      "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine continues to pose an immediate, ongoing, and critical danger to plant equipment and personnel safety.",
-      "action": "NOTIFY"
-    }
-  },
-  {
-    "message": "Fire detected near the gas turbine",
-    "decision": {
-      "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine poses an ongoing, immediate, and critical danger to plant equipment and personnel safety.",
-      "action": "NOTIFY"
-    }
-  },
-  {
-    "message": "The fire is still present near the turbine",
-    "decision": {
-      "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine continues to pose an immediate, ongoing, and critical danger to plant equipment and personnel safety.",
-      "action": "NOTIFY"
-    }
-  },
-  {
-    "message": "Fire detected near the gas turbine",
-    "decision": {
-      "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine poses an ongoing, immediate, and critical danger to plant equipment and personnel safety.",
-      "action": "NOTIFY"
-    }
-  },
-  {
-    "message": "The fire is still present near the turbine",
-    "decision": {
-      "priority": "HIGH",
-      "reason": "The persistent fire near the gas turbine continues to pose an immediate, ongoing, and critical danger to plant equipment and personnel safety.",
+      "reason": "A fire near the gas turbine represents a recurring critical hazard that poses immediate danger to equipment and personnel.",
       "action": "NOTIFY"
     }
   }

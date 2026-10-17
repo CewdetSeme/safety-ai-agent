@@ -1,16 +1,9 @@
 [
   {
-    "id": "2d783c58-aa63-4023-9ebd-1d6641792512",
+    "id": "c714fe14-4e7c-4bf6-a69e-aebe0df49e10",
     "message": "Fire detected near the gas turbine",
     "priority": "HIGH",
-    "reason": "The persistent fire near the gas turbine poses an ongoing, immediate, and critical danger to plant equipment and personnel safety.",
-    "loggedAt": "2026-10-11T08:56:22.278Z"
-  },
-  {
-    "id": "a78047ba-e65f-44e7-bf3e-3190199a553d",
-    "message": "The fire is still present near the turbine",
-    "priority": "HIGH",
-    "reason": "The persistent fire near the gas turbine continues to pose an immediate, ongoing, and critical danger to plant equipment and personnel safety.",
-    "loggedAt": "2026-10-11T08:56:23.474Z"
+    "reason": "Fire detected near the gas turbine poses an immediate danger to equipment and personnel.",
+    "loggedAt": "2026-10-14T11:41:26.653Z"
   }
 ]

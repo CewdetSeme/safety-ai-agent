@@ -1,0 +1,12 @@
+[
+  {
+    "frame": "frame_0001.jpg",
+    "timeSeconds": 0,
+    "report": "**Industrial Safety Report**\n\n1. **Number of visible people:** 1 person.\n2. **Hard hats:** UNCERTAIN (the person's headwear cannot be clearly identified due to distance and image resolution).\n3. **High-visibility vests:** UNCERTAIN (clothing details are not clearly discernible in the grainy surveillance footage).\n4. **Other clearly visible safety hazards:** \n   - An open manhole or access hatch is present in the immediate vicinity of the person, creating a severe fall hazard."
+  },
+  {
+    "frame": "frame_0002.jpg",
+    "timeSeconds": 3,
+    "report": "Based on the provided CCTV image, here is the safety observation report:\n\n1. **Number of visible people:** 0 (No people are visible in this frame).\n2. **Hard hats:** UNCERTAIN (No individuals present to evaluate).\n3. **High-visibility vests:** UNCERTAIN (No individuals present to evaluate).\n4. **Other clearly visible safety hazards:** None identifiable from this specific angle and distance."
+  }
+]

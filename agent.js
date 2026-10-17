@@ -5,6 +5,8 @@ import { GoogleGenAI } from "@google/genai";
 
 import crypto from "node:crypto"
 
+import { sendAlertEmail } from "./email.js";
+
 const ai = new GoogleGenAI({})
 
 const MEMORY_File = "./memory.json"
@@ -12,6 +14,9 @@ const MEMORY_File = "./memory.json"
 async function loadMemory(){
     try{
         const data = await readFile(MEMORY_File, "utf8")
+        if(!data.trim()){
+            return [];
+        }
         return JSON.parse(data)
     }
     catch(error){
@@ -40,8 +45,9 @@ async function logIncident(incident) {
             throw new Error("incidents.json must contain a JSON array")
     }
     catch(error){
-        if(error.code === "ENOENT")
+        if(error.code === "ENOENT"){
             throw error;
+        }
     }
 
     // avoid duplicate recording incidents
@@ -49,7 +55,7 @@ async function logIncident(incident) {
 
     if(duplicate){
         console.log("this message already exists")
-        return
+        return false;
     }
 
 
@@ -63,6 +69,7 @@ async function logIncident(incident) {
         INCIDENTS_FILE, JSON.stringify(incidents,null,2), "utf8"
     )
     console.log("Incident saved to incidents.json")
+    return true;
 }
 
 function observe(input){
@@ -129,6 +136,7 @@ function act(decision){
         console.log("Important message.")
         console.log("Priority: ", decision.priority)
         console.log("Reason: ", decision.reason)
+        
     }
         
     else
@@ -154,11 +162,25 @@ async function runAgent(input){
         act(decision);
 
         if(decision.action==="NOTIFY"){
-            await logIncident({
-                message:observation,
-                priority:decision.priority,
-                reason:decision.reason
+            const isNewIncident = await logIncident({
+                message: observation,
+                priority: decision.priority,
+                reason: decision.reason
             })
+
+            if(isNewIncident){
+                await sendAlertEmail({
+                    type:"Industrial Safety Incident",
+                    location:"Power Plant",
+                    severity:decision.priority,
+                    message:observation,
+                    reason: decision.reason
+                })
+                console.log("Email sent for new incident.")
+            }
+            else{
+                console.log("Duplicate incident: email not sent.")
+            }
         }
 
     }
@@ -173,4 +195,4 @@ async function runAgent(input){
 
 await runAgent("Fire detected near the gas turbine");
 
-await runAgent("The fire is still present near the turbine");
+await runAgent("Fire detected near the gas turbine");
