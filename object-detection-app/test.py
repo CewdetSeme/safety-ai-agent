@@ -1,4 +1,5 @@
 
+""""
 import streamlit as st
 import cv2
 
@@ -37,3 +38,54 @@ if st.button("Start Camera"):
             )
 
         cap.release()
+"""
+
+import streamlit as st
+import cv2
+import time
+
+st.title("Video Playback Test")
+
+uploaded = st.file_uploader("Upload video", type=["mp4"])
+
+if uploaded:
+
+    with open("videoplayback.mp4", "wb") as f:
+        f.write(uploaded.getbuffer())
+
+    cap = cv2.VideoCapture("videoplayback.mp4")
+
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    if fps <= 0:
+        fps = 25
+
+    frame_placeholder = st.empty()
+    counter = st.empty()
+
+    frame_number = 0
+
+    while True:
+
+        success, frame = cap.read()
+
+        if not success:
+            break
+
+        frame_number += 1
+
+        frame = cv2.cvtColor(
+            frame,
+            cv2.COLOR_BGR2RGB
+        )
+
+        frame_placeholder.image(
+            frame,
+            channels="RGB",
+            output_format="JPEG"
+        )
+
+        counter.write(f"Frame: {frame_number}")
+
+        time.sleep(1 / fps)
+
+    cap.release()
