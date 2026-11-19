@@ -39,7 +39,7 @@ if st.button("Start Camera"):
 
         cap.release()
 """
-
+"""
 import streamlit as st
 import cv2
 import time
@@ -89,3 +89,19 @@ if uploaded:
         time.sleep(1 / fps)
 
     cap.release()
+"""
+
+from mock_llm import MockSafetyLLM
+from rtsp_reader import RTSPReader
+from detector import ObjectDetector
+from safety_monitor import run_safety_monitor
+
+class ConsoleAlert:
+    def send(self, subject, html, evidence_path, context):
+        print(f"[ALERT] {subject} → evidence: {evidence_path}")
+
+reader = RTSPReader("rtsp://stream.strba.sk:1935/strba/VYHLAD_JAZERO.stream")
+reader.start()
+detector = ObjectDetector("yolov8n.pt")
+run_safety_monitor(reader, detector, MockSafetyLLM(), ConsoleAlert(),
+                   analyze_every_s=5, alert_cooldown_s=30)
