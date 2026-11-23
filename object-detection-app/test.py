@@ -91,6 +91,8 @@ if uploaded:
     cap.release()
 """
 
+# test reader with detections with mock llm and console alert
+"""
 from mock_llm import MockSafetyLLM
 from rtsp_reader import RTSPReader
 from detector import ObjectDetector
@@ -105,3 +107,24 @@ reader.start()
 detector = ObjectDetector("yolov8n.pt")
 run_safety_monitor(reader, detector, MockSafetyLLM(), ConsoleAlert(),
                    analyze_every_s=5, alert_cooldown_s=30)
+
+
+
+
+"""
+# test_llm.py — run with: python test_llm.py path/to/image.jpg
+import base64
+import json
+import sys
+import logging
+
+logging.basicConfig(level=logging.INFO)
+from llm_client import OpenAIVisionClient
+
+with open(sys.argv[1], "rb") as f:
+    b64 = base64.b64encode(f.read()).decode()
+
+client = OpenAIVisionClient()
+verdict = client.analyze(b64)
+print(json.dumps(verdict, indent=2))
+
